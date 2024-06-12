@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $DOCKERHUB_USERNAME/myapp1:v1
+            docker build -t $DOCKERHUB_USERNAME/myapp1:v1 .
       - run:
           name: Authenticate with Docker Hub
           command: |
