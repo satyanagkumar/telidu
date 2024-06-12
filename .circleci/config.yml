@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $DOCKERHUB_USERNAME/myapp1:$CIRCLE_SHA1 .
+            docker build -t $DOCKERHUB_USERNAME/myapp1:latest
       - run:
           name: Authenticate with Docker Hub
           command: |
@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Push Docker Image to Docker Hub
           command: |
-            docker push $DOCKERHUB_USERNAME/myapp1:$CIRCLE_SHA1
+            docker push $DOCKERHUB_USERNAME/myapp1:latest
 
 workflows:
   build_and_deploy:
