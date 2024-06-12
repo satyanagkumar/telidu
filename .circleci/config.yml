@@ -24,6 +24,11 @@ jobs:
           name: Push Docker Image to Docker Hub
           command: |
             docker push $DOCKERHUB_USERNAME/myapp1:v1
+      - run:
+          name: Echo DockerHub Username
+          command: |
+          echo "DockerHub Username is set to: '$DOCKERHUB_USERNAME'"
+
 
 workflows:
   build_and_deploy:
