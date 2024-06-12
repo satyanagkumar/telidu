@@ -6,8 +6,8 @@ jobs:
       - image: cimg/python:3.8.10
     steps:
       - checkout
-      - setup_remote_docker
-        version: 19.03.13
+      - setup_remote_docker:
+          version: 19.03.13
       - run:
           name: Show DockerHub Username
           command: |
