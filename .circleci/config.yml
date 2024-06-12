@@ -7,11 +7,15 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-          version: 19.03.13
+          version: latest
+      - run:
+          name: Show DockerHub Username
+          command: |
+            echo "DockerHub Username: $DOCKERHUB_USERNAME"
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $DOCKERHUB_USERNAME/myapp1:latest
+            docker build -t $DOCKERHUB_USERNAME/myapp1:latest .
       - run:
           name: Authenticate with Docker Hub
           command: |
